@@ -36,8 +36,9 @@ result.forEach((obj) => {
 
   let namesList = `<ul>${namesListElements}</ul>`
   let title = `<h2>${obj.group}</h2>`
+  let assistant = `<h3>Assistant: ${obj.name}</h3>`
 
-  innerDivs += `<div style="background-color:${color}">${title}${namesList}</div>`
+  innerDivs += `<div style="background-color:${color}">${title}${assistant}${namesList}</div>`
 })
 
 var outerDiv = document.getElementById("outer");
