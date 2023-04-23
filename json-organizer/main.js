@@ -19,14 +19,9 @@ console.log(result)
 //document.getElementById("json").textContent = JSON.stringify(result, undefined, 2)
 
 let innerDivs = ""
-let colors = {
-  OrangeRed: "red",
-  AliceBlue: "blue",
-  DeepPink: "pink"
-}
 
 result.forEach((obj) => {
-  let color = colors[obj.group] || "gray"
+  let color = obj.group.toLowerCase()
   let students = obj.students.map(a => a.name);
 
   let namesListElements = ""
