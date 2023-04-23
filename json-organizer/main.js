@@ -16,4 +16,29 @@ let result = trueFirstArr.reduce((acc, d) => {
 
 console.log(data)
 console.log(result)
-document.getElementById("json").textContent = JSON.stringify(result, undefined, 2)
+//document.getElementById("json").textContent = JSON.stringify(result, undefined, 2)
+
+let innerDivs = ""
+let colors = {
+  OrangeRed: "red",
+  AliceBlue: "blue",
+  DeepPink: "pink"
+}
+
+result.forEach((obj) => {
+  let color = colors[obj.group] || "gray"
+  let students = obj.students.map(a => a.name);
+
+  let namesListElements = ""
+  students.forEach((student) => {
+    namesListElements += `<li>${student}</li>`
+  })
+
+  let namesList = `<ul>${namesListElements}</ul>`
+  let title = `<h2>${obj.group}</h2>`
+
+  innerDivs += `<div style="background-color:${color}">${title}${namesList}</div>`
+})
+
+var outerDiv = document.getElementById("outer");
+outerDiv.innerHTML = innerDivs;
